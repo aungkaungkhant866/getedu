@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+.navbar {
+    position: sticky;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    justify-content: space-between;
+    background-color: #58B9E3;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+}
+
+.logo {
+    font-size: 26px;
+}
+
+.menu {
+    display: flex;
+    gap: 0.5cm;
+    font-size: 18px;
+    padding: 5px 5px;
+}
+
+.account {
+    position: relative;
+}
+
+.dropdown {
+    background-color: #58B9E3;
+    padding: 0.5cm 0;
+    position: absolute;
+    display: none;
+    border-radius: 15px;
+    top: 25px;
+}
+
+.dropdown li+li {
+    margin-top: 20px;
+}
+
+.dropdown li{
+    font-size: 18px;
+    width: 4cm;
+    text-align: center;  
+}
+
+.dropdown li:hover {
+    background-color: #58B9E3;
+}
+
+.account:hover .dropdown {
+    display: block;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+.icon {
+    display: none;
+    font-size: 20px;
+    user-select: none;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        display: none;
+        position: absolute;
+        background-color: #58B9E3;
+        right: 0;
+        left: 0;
+        text-align: center;
+        padding: 16px 0;
+    }
+    
+    .menu li:hover {
+        display: inline-block;
+        background-color: #58B9E3;
+        transition: 0.3s ease;
+    }
+
+    .menu li+li {
+        margin-top: 12px;
+    }
+
+    input[type=checkbox]:checked ~ .menu {
+        display: block;
+    }
+
+    .icon {
+        font-size: 30px;
+        display: block;
+    }
+
+    .dropdown {
+        left: 100%;
+        margin-top: -1.6cm;
+    }
+
+    .dropdown li:hover {
+        background-color: #58B9E3;
+    }
+}
